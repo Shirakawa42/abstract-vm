@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Operand.hpp"
 #include "IOperand.hpp"
 #include <string>
 #include <iostream>
