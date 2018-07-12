@@ -256,8 +256,7 @@ int 	Parser::print(std::string const & file, int i)
 
 int 	Parser::exit(std::string const & file, int i)
 {
-	i = file.length();
-	return i;
+	std::exit(0);
 }
 
 void	Parser::parseFile(std::string file)
@@ -299,4 +298,5 @@ void	Parser::parseFile(std::string file)
 				throw AVMException("Unknown instruction: " + command);
 		}
 	}
+	throw AVMException("Error: No exit instruction");
 }
