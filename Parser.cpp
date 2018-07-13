@@ -105,6 +105,7 @@ int 	Parser::push(std::string const & file, int i)
 
 int 	Parser::pop(std::string const & file, int i)
 {
+	(void)file;
 	if (!_stack->empty())
 		_stack->pop();
 	else
@@ -114,6 +115,7 @@ int 	Parser::pop(std::string const & file, int i)
 
 int 	Parser::dump(std::string const & file, int i)
 {
+	(void)file;
 	MutantStack<const IOperand*>			*cpy = _stack;
 	MutantStack<const IOperand*>::iterator	it = cpy->end();
 	it--;
@@ -153,6 +155,7 @@ int 	Parser::assert(std::string const & file, int i)
 
 int 	Parser::add(std::string const & file, int i)
 {
+	(void)file;
 	const IOperand		*op1;
 	const IOperand		*op2;
 
@@ -171,6 +174,7 @@ int 	Parser::add(std::string const & file, int i)
 
 int 	Parser::sub(std::string const & file, int i)
 {
+	(void)file;
 	const IOperand		*op1;
 	const IOperand		*op2;
 
@@ -189,6 +193,7 @@ int 	Parser::sub(std::string const & file, int i)
 
 int 	Parser::mul(std::string const & file, int i)
 {
+	(void)file;
 	const IOperand		*op1;
 	const IOperand		*op2;
 
@@ -207,6 +212,7 @@ int 	Parser::mul(std::string const & file, int i)
 
 int 	Parser::div(std::string const & file, int i)
 {
+	(void)file;
 	const IOperand		*op1;
 	const IOperand		*op2;
 
@@ -225,6 +231,7 @@ int 	Parser::div(std::string const & file, int i)
 
 int 	Parser::mod(std::string const & file, int i)
 {
+	(void)file;
 	const IOperand		*op1;
 	const IOperand		*op2;
 
@@ -243,6 +250,7 @@ int 	Parser::mod(std::string const & file, int i)
 
 int 	Parser::print(std::string const & file, int i)
 {
+	(void)file;
 	const IOperand		*op;
 
 	if (_stack->size() == 0)
@@ -256,13 +264,14 @@ int 	Parser::print(std::string const & file, int i)
 
 int 	Parser::exit(std::string const & file, int i)
 {
+	(void)file;
+	(void)i;
 	std::exit(0);
 }
 
 void	Parser::parseFile(std::string file)
 {
 	int 		j = file.length();
-	int 		n = 0;
 	std::string	commands[] = {
 		"push",
 		"pop",
